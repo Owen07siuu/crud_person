@@ -9,7 +9,7 @@ export const People = ({ persons, setPersons }) => {
   const [editedPerson, setEditedPerson] = useState({
     name:'',
     role:'',
-    img:'',
+    img:''
   });
 
   //Estado para establecer si se esta editando
@@ -27,9 +27,11 @@ export const People = ({ persons, setPersons }) => {
   //metodo para crear nuevo empleado
   const handleCreate = (e) => {
     setPersons([...persons, {id: persons.length +1, ...editedPerson}]);
+     //prevenir que el navegador se actualice
+     e.preventDefault();
 
     //resetear variable de estado edited person
-    setEditedPerson({name: '', role:'', img:','});
+    setEditedPerson({name: '', role:'', img:''});
   }
 
   //metdo para editar los datos de una persona
