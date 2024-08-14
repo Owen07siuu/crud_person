@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-export const Person = ({id, name, role, img}) => {
+export const Person = ({id, name, role, img, handleEdit}) => {
 
   return (
     <div className='col'>
@@ -10,7 +10,7 @@ export const Person = ({id, name, role, img}) => {
           <p className='card-text'>{role}</p>
         </div>
         <div className='container mb-4 text-center'>
-          <button className='btn btn-success me-2'>Editar</button>
+          <button className='btn btn-success me-2' onClick={handleEdit}>Editar</button>
           <button className='btn btn-danger'>Eliminar</button>
         </div>
         </div>
@@ -22,4 +22,5 @@ Person.propTypes = {
     name: PropTypes.string.isRequired,
     role: PropTypes.string.isRequired,
     img: PropTypes.string.isRequired,
+    handleEdit: PropTypes.func
 }
